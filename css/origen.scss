@@ -1,0 +1,896 @@
+/* CSS Proyecto */ 
+
+/* Vars */
+
+$colorAlison: darkcyan;
+$colorBackground: rgb(197, 231, 235);
+$colorTextoChico: lightslategray;
+$colorTitulos: dimgrey;
+
+/* Maps */
+
+$estilos: (
+  colorbackground: white,
+  derecha: right,
+  margin: 10px,
+  color: rgba(0, 139, 139, 0.808)
+);
+
+/* Mixins */
+
+@mixin espacios ($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+
+}
+
+
+/* ESTILOS GENERALES */
+
+* {
+    margin: 0;
+    font-family: 'Mate SC', sans-serif;
+}
+
+head {
+    title {
+        font-family: 'Mate SC', sans-serif;
+    }
+}
+
+body {
+
+    flex-wrap: wrap;
+
+    header {
+        z-index: 2;
+        display: flex;
+        grid-template-columns: 1fr 5fr;
+        width: 100%;
+        position: fixed;
+        height: auto;
+        justify-content: space-between;
+        background-color: $colorBackground;
+
+        nav {
+            background-color: $colorBackground;
+        }
+    }
+
+    main {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        color: rgba(0, 139, 139, 0.808);
+        background-color: $colorBackground;
+        font-size: 20px;
+        text-align: right;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* HEADER */
+
+header {
+    z-index: 2;
+
+    .logoAlisonHeader {
+    display: flex;
+    align-content: flex-start;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    animation-name: animatedLogo;
+    }
+
+    .container-fluid {
+        display: flex;
+        flex-wrap: inherit;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        background-color: $colorBackground;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+        transition: box-shadow .15s ease-in-out;
+    }
+
+    .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    .navbar {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0px;
+        padding: 0px;
+        background-color: $colorBackground;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        background-color: $colorBackground;
+        flex-wrap: wrap;
+    }
+
+    #menuFlex {
+        list-style-type: none;
+        background-color: $colorBackground;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        background-attachment: fixed;
+        padding-top: 30px;
+        padding: 10px;
+    }
+
+    .nav-item {
+        list-style-type: none;
+        color: lightslategray;
+        font-family: "Mate", sans-serif;
+        font-style: normal;
+        font-size: 23px;
+        font-weight: lighter;
+        text-decoration: none;
+        background-color:  $colorBackground;
+
+    }
+
+    .nav-link {
+        display: flex;
+        color: lightslategray;
+        text-decoration: none;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    }
+
+
+    .seccionMenu {
+        color: $colorAlison;
+        font-size: 30px;
+        font-weight: lighter;
+        text-align: right;
+        margin: 10px;
+        padding-right: 10px;
+    }
+
+}
+
+
+.divIndex {
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/9b27dc69484705.5b83706635ebd.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    }
+
+
+.divAboutus {
+    @extend .divIndex;
+    background-image: url(https://thedesignfiles.net/wp-content/uploads/2020/08/DanielleAlvarez-DreamJob-tdf-7-2200x1235.jpg);
+    }
+
+.divProducts {
+    @extend .divIndex;
+    background-image: url(https://f.roocdn.com/images/menus/235882/header-image.jpg?width=1200&height=630&fit=crop);
+    }
+
+.divGallery {
+    @extend .divIndex;
+    background-image: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2019%2F09%2FGettyImages-1070622360-2000.jpg);
+    }
+
+.divContact {
+    @extend .divIndex;
+    background-image: url(https://www.miamidesigndistrict.net/images/listings/large/731_pura-vida_1572908803441374.jpg);   
+}
+
+.divLocations {
+    @extend .divIndex;
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/177e2f69484705.5b83706637a2d.jpg);   
+}
+
+/* MAIN */
+
+section {
+    .horariosAlison {
+        display: grid;
+        color: rgba(2, 138, 138, 0.459);
+        font-size: 20px;
+        text-align: center;
+        border-width: 2px;
+        border-radius: 20px;
+        border-right: 2px;
+        @include espacios(20px, 20px);
+    }
+}
+
+
+/* Index */
+
+section {
+
+    .menuResto {
+        border-radius: 15px;
+        border-style: double;
+        color: rgba(0, 139, 139, 0.808);
+        @include espacios(30px, 10px);
+
+    }
+
+    main h2 {
+        color: $colorTextoChico;
+        font-size: 30px;
+        text-align: left;
+        @include espacios(10px, 10px);
+
+    }
+    
+    #coffee {
+        color: $colorAlison;
+        font-size: 30px;
+        text-align: center;
+        @include espacios(20px, 10px);
+    } 
+    
+    .inicio {
+        color: rgba(2, 138, 138, 0.459);
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .legendIndex {
+        color: rgba(2, 138, 138, 0.459);
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .linkMenu {
+        color: rgba(2, 138, 138, 0.329);
+        font-size: 25px;
+        text-align: center;
+        text-decoration-line: none;
+        @include espacios(20px, 10px);
+    }
+
+    .fieldsetIndex  {
+        display: grid;
+        color: rgba(0, 139, 139, 0.808);
+        font-size: 20px;
+        text-align: center;
+        border-radius: 2px;
+        border-color: dimgrey;
+        border-style: dashed;
+        border-color: $colorBackground;
+        @include espacios(20px, 10px);
+    }
+    
+    
+    .productsIndex {
+        display: grid;
+        color: rgba(0, 139, 139, 0.808);
+        font-size: 23px;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+        justify-items: center;
+        @include espacios(20px, 10px);
+    }
+    
+    #selectInfo {
+        color: $colorTitulos;
+        font-size: 15px;
+        text-align: left;
+        @include espacios(10px, 10px);
+    }
+
+
+}
+
+
+
+/* About us */
+
+section {
+
+    .preguntasAboutus {
+        color: $colorAlison;
+        font-size: 25px;
+        text-align: center;
+        @include espacios(10px, 10px);
+
+    }
+    
+    .pAboutus {
+        color: $colorTitulos;
+        font-style: italic;
+        font-size: 20px;
+        text-align: center;
+        @include espacios(20px, 20px);
+
+    }
+}
+
+
+/* Products */
+
+
+section {
+    .containerProducts {
+        z-index: 2;
+        @include espacios(30px, 10px);
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        margin-bottom: 50px;
+    }
+    
+    .productsTitulos {
+        display: flex;
+        color:  $colorAlison;
+        font-size: 35px;
+        text-align: left;
+        text-decoration: underline;
+        @include espacios(10px, 10px);
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: rgb(245, 241, 241);
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 1rem;
+        margin: 5px;
+        margin-bottom: 20px;
+    }
+
+    .card-img-top {
+        border-radius: 1rem;
+        padding: 10px;
+        padding-top: 30px;
+        width: 100%;
+    }
+    
+    .card-body {
+        flex: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .descripcionesProducts {
+        display: flex;
+        text-decoration: double;
+        color: $colorAlison;
+        font-size: 25px;
+        padding: 10px;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .especificacionesProducts {
+        display: flex;
+        color: $colorTextoChico;
+        font-size: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-variant: small-caps;
+        @include espacios(10px, 10px);
+    }
+
+}
+
+
+/* Gallery */
+
+.carouselIndexGallery {
+    width: 40%;
+    height: 40%;
+    align-content: center;
+    justify-content: center;
+}
+
+
+/* Contact */
+
+.formContact {
+    display: flex;
+}
+
+section {
+
+    .pContact {
+        color: $colorTitulos;
+        font-size: 20px;
+        text-align: left;
+    }
+    
+    .spanContact {
+        color: $colorTitulos;
+        font-size: 15px;
+        display: flex;
+    }
+    
+    
+    #info {
+        color: $colorTitulos;
+        font-size: 20px;
+        text-align: left;
+        @include espacios(10px, 10px);
+    }
+    
+    .formularioRespuesta {
+        color: $colorTitulos;
+        font-size: 20px;
+        text-align: left;
+        @include espacios(10px, 10px);
+        flex-wrap: wrap;
+    }
+}
+
+
+div {
+
+    .contactar {
+        color: $colorAlison;
+        font-size: 20px;
+        text-align: left;
+        border-width: 2px;
+        border-radius: 20px;
+        border-style: hidden;
+        border-color: slategray;
+        @include espacios(10px, 10px);
+    }
+    
+    .legendContact {
+        color: $colorTitulos;
+        font-size: 25px;
+        @include espacios(10px, 10px);
+    }
+}
+
+
+
+
+
+/* Locations */
+
+section {
+
+    flex-wrap: wrap;
+
+    .sucursalesLocations {
+        color: rgba(0, 139, 139, 0.575);
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 10px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        text-decoration: overline;
+    }
+    
+    .adress {
+        color: $colorTitulos;
+        font-size: 20px;
+        justify-content: center;
+        text-align: center;
+        @include espacios(10px, 0px);
+        padding-bottom: 30px;
+    }
+
+}
+
+/* FOOTER */
+
+footer {
+
+    div {
+        .footerAlison {
+            color: rgba(0, 139, 139, 0.808);
+            font-size: 23px;
+            text-align: left;
+            background-color: $colorBackground;
+            margin: 10px;
+            width: 100%;
+            padding-left: 30px;
+            padding: 20px;
+        }
+    }
+
+    .FooterSocial {
+        color: map-get($estilos, color);
+        border-color: map-get($estilos, color);
+        text-align: map-get($estilos, derecha);
+        margin: map-get($estilos, margin);
+    }
+    
+    
+    .btn-group {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 30px;
+        padding: 20px;
+    }
+    
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        line-height: 1.5;
+        color: rgba(0, 139, 139, 0.808);
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        transition: color .15s;  
+        transition: color .15s;  
+        transition: color .15s;  
+        margin-bottom: 10px;   
+        margin-bottom: 10px;     
+        margin-bottom: 10px;   
+    }
+    
+    .btn-outline-secondary {
+        color: #6c757d;
+        border-color: rgba(0, 139, 139, 0.808);
+    }
+
+}
+
+
+/* IMAGENES */ 
+
+/* Imagenes INDEX */
+
+/* Imagenes ABOUT-US */
+
+.img1Aboutus {
+    display: flex;
+    align-items: center;
+    width: 35%;
+    height: 55%;
+    @include espacios(30px, 20px);
+}
+
+.img2Aboutus {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 50%;
+    @include espacios(30px, 20px);
+}
+
+/* Imagenes PRODUCTS */
+
+.imgsProducts {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    @include espacios(10px, 10px);
+}
+
+
+
+/* GRIDS EXPLICITA */
+
+
+.fieldsetContact1 {
+    display: grid;
+    color: $colorTitulos;
+    font-size: 20px;
+    text-align: left;
+    border-width: 2px;
+    border-radius: 20px;
+    border-style: dashed;
+    border-color: slategray;
+    width: 50%;
+    @include espacios(20px, 20px);
+}
+
+
+.fieldsetContact2 {
+    @extend .fieldsetContact1;
+}
+
+
+
+/* Nombrar AREAS */
+
+#sectionProducts {
+    grid-area: products;
+    padding: 10px;
+    margin: 10px;
+}
+
+#sectionGallery {
+    display: grid;
+    grid-area: gallery;
+    @include espacios(10px, 10px);
+}
+
+
+#sectionLocations {
+    grid-area: location;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: none;
+    align-items: center;
+}
+
+.mainLocations {
+    display: grid;
+    align-items: center;
+    @include espacios(20px, 20px);
+}
+
+
+
+
+
+/* RESPONSIVE WEB DESIGN 
+/* Desktop */
+@media (min-width: 1024px) {
+    
+    body {
+        width: 100%;
+        flex-wrap: wrap;
+
+    }
+
+
+    .seccionMenu {
+        color: $colorAlison;
+        font-size: 25px;
+        font-weight: lighter;
+        text-align: right;
+        margin: 20px;
+        padding-right: 10px;
+    }
+    
+        #menuFlex {
+        list-style-type: none;
+        background-color:  $colorBackground;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        @include espacios(0px, 20px);
+    }
+
+    ul li a {
+        display: flex;
+        list-style-type: square;
+        color: $colorTextoChico;
+        font-family: 'Mate', sans-serif;
+        font-style: normal;
+        font-size: 20px;
+        font-weight: lighter;
+        text-decoration: none;
+        margin: 25px;
+    }
+
+
+}
+
+
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1023px) {
+
+
+    header {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        flex-wrap: wrap;
+    }
+    .seccionMenu {
+        color: $colorAlison;
+        font-size: 25px;
+        font-weight: lighter;
+        text-align: right;
+        margin: 20px;
+        padding-right: 10px;
+    }
+    
+    #menuFlex {
+        list-style-type: none;
+        color:  $colorBackground;
+        padding: 20px;
+        padding-top: 40px;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: right;
+    }
+
+    ul li a {
+        display: flex;
+        list-style-type: none;
+        color: $colorTextoChico;
+        font-family: 'Mate', sans-serif;
+        font-style: normal;
+        font-size: 20px;
+        font-weight: lighter;
+        text-decoration: none;
+        margin: 25px;
+    }
+
+    .formContact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fieldsetContact1 {
+        width: 80%;
+    }
+}
+
+
+/* Smartphone */
+
+@media (max-width: 480px) {
+
+    header {
+        width: 100%;
+        flex-wrap: wrap;
+        background-color: $colorBackground;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        flex-wrap: wrap;
+    }
+
+    .seccionMenu {
+        color: $colorAlison;
+        font-size: 25px;
+        font-weight: lighter;
+        text-align: right;
+        margin: 20px;
+        padding-right: 10px;
+    }
+
+
+    #menuFlex {
+        list-style-type: none;
+        color:  $colorBackground;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: right;
+        @include espacios(0px, 20px);
+    }
+
+    ul li a {
+        display: flex;
+        list-style-type: square;
+        color: $colorTextoChico;
+        font-family: 'Mate', sans-serif;
+        font-style: normal;
+        font-size: 20px;
+        font-weight: lighter;
+        text-decoration: none;
+        margin: 25px;
+        align-content: flex-end;
+    }
+
+    .productsIndex {
+        display: grid;
+        color: rgba(0, 139, 139, 0.808);
+        font-size: 20px;
+        grid-template-columns: 25% 25% 25% 25%;
+        justify-items: center;
+        @include espacios(20px, 10px);
+    }
+
+
+    .formContact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fieldsetContact1 {
+        width: 70%;
+    }
+
+}
+
+/* GRADIENTES */
+
+.gradLineal {
+    background-image: linear-gradient(blue lightblue);
+}
+
+/* TRANSICIONES */
+
+.logoAlisonHeader:hover {
+    width: 120px;
+    height: 120px;
+    transition-duration: 2s;
+}
+
+.nav-link:hover {
+    font-size: 25px;
+    transition-duration: 2s;
+}
+
+.menuResto:hover {
+    background-image: linear-gradient(blue lightblue);
+
+}
+
+
+
+
+/* ANIMACIONES */
+
+.div1Animado {
+    animation-name: div1Animado;
+    animation-iteration-count: infinite;
+}
+
+.animate__animated.animate__backInDown {
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+
+/* PSEUDO CLASES - PSEUDO ELEMENTOS */
+
+:link {
+    color: $colorTextoChico;
+    font-size: 23px;
+    text-align: center;
+}
+
+:visited {
+    color: $colorTextoChico;
+    font-size: 23px;
+    text-align: center;
+}
+
+:active {
+    color: $colorTextoChico;
+    font-size: 23px;
+    text-align: center; 
+}
