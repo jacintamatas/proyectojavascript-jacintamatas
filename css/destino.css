@@ -51,7 +51,7 @@
     align-content: flex-start;
     height: 100px;
     width: 100px;
-    margin: 10px;
+    margin: 5px;
     animation-name: animatedLogo;
   }
   header .container-fluid {
@@ -246,6 +246,15 @@
     margin: 10px;
     padding: 10px;
   }
+
+
+  section #logIn {
+    display: grid;
+    color: rgba(0, 139, 139, 0.808);
+    font-size: 20px;
+    justify-items: center;
+    align-content: center;
+}
   
   /* About us */
   section .preguntasAboutus {
@@ -265,6 +274,14 @@
   }
   
   /* Products */
+
+  #carritoCompras .FooterSocial {
+        color: lightslategray;
+        border-color: rgba(119, 136, 153, 0.63);
+        text-align: center;
+        margin: 10px;
+    }
+
   section .containerProducts {
     z-index: 2;
     margin: 30px;
@@ -323,10 +340,32 @@
     font-size: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    font-variant: small-caps;
+    font-variant: normal;
     margin: 10px;
     padding: 10px;
   }
+
+  section .preciosProducts {
+    display: flex;
+    color: rgb(4, 78, 78);
+    font-size: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-variant: normal;
+    margin: 10px;
+    padding: 10px;
+}
+
+section #btnAgregar {
+  display: flex;
+  text-decoration: double;
+  color: lightslategray;
+  font-size: 20px;
+  padding: 10px;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
   
   /* Gallery */
   .carouselIndexGallery {
