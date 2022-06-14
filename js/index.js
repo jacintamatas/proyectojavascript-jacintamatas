@@ -1,12 +1,26 @@
 const btn = document.getElementById ('#logIn');
 btn.addEventListener ("click", () => {
-Swal.fire(
-    'The Internet?',
-    'That thing is still around?',
-    'question'
-  )
+    Swal.fire({
+    title: 'Login Form',
+    html: `<input type="text" id="login" class="swal2-input" placeholder="Username">
+    <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+    confirmButtonText: 'Sign in',
+    focusConfirm: false,
+    preConfirm: () => {
+      const login = Swal.getPopup().getElementById('#logIn').value
+      const password = Swal.getPopup().querySelector('#password').value
+      if (!login || !password) {
+        Swal.showValidationMessage(`Please enter login and password`)
+      }
+      return { login: login, password: password }
+    }
+  }).then((result) => {
+    Swal.fire(`
+      Login: ${result.value.login}
+      Password: ${result.value.password}
+    `.trim())
+  })
 })
-
 
 const leerDatos = (valorAPedir) => {
     return prompt (`Ingrese su ${valorAPedir}`);
@@ -38,31 +52,6 @@ botonIndex.addEventListener ("mousedown", () => {
 botonIndex.addEventListener ("mouseup", () => {
     console.log ("click con mouseup");
     botonIndex.className = "tienda2";
-})
-
-/*
-const btn = document.getElementById ('#logIn');
-btn.addEventListener ("click", () => {
-    Swal.fire({
-    title: 'Login Form',
-    html: `<input type="text" id="login" class="swal2-input" placeholder="Username">
-    <input type="password" id="password" class="swal2-input" placeholder="Password">`,
-    confirmButtonText: 'Sign in',
-    focusConfirm: false,
-    preConfirm: () => {
-      const login = Swal.getPopup().getElementById('#logIn').value
-      const password = Swal.getPopup().querySelector('#password').value
-      if (!login || !password) {
-        Swal.showValidationMessage(`Please enter login and password`)
-      }
-      return { login: login, password: password }
-    }
-  }).then((result) => {
-    Swal.fire(`
-      Login: ${result.value.login}
-      Password: ${result.value.password}
-    `.trim())
-  })
 })
 
 
