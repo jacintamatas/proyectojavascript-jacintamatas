@@ -25,11 +25,5 @@ class Carrito {
             especificacion: document.getElementsByClassName ("especificacionesProducts"),
             precio: document.getElementsByClassName ("preciosProducts"),
         }
-        this.insertarCarrito (infoProduct){
-
-        }
-    eliminarProducto () {
-        
-    }
     } 
 }
