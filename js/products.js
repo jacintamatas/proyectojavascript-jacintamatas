@@ -60,12 +60,6 @@ const productos = [
 
 ]
 
-const guardarLocal = (productos, productos) => { 
-    localStorage.setItem("productos", productos) 
-};
-
-guardarLocal("listaProductos", JSON.stringify(productos));
-
 let contenedor = document.createElement ("div"); 
 contenedor.className = "card";
 contenedor.innerHTML = `<img src= "${producto.imagenProducts}" >`
@@ -84,6 +78,12 @@ const crearProductos = () => {
     document.body.appendChild (contenedorProducts);
 }
 }
+
+const guardarLocal = (productos, productos) => { 
+    localStorage.setItem("producto", productos) 
+};
+
+guardarLocal("listaProductos", JSON.stringify(productos));
 
 const traerProductosJson = (async) => {
     let response = await fetch ("./json/archivoProducts.json");
