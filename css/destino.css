@@ -318,6 +318,7 @@
     padding: 10px;
     padding-top: 30px;
     width: 100%;
+    height: 450px;
   }
   section .card-body {
     flex: auto;
