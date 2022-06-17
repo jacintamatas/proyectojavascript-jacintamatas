@@ -441,7 +441,7 @@ section {
         color: lightslategray;
         font-size: 20px;
         padding: 10px;
-        align-items: center;
+        justify-content: center;
         align-content: center;
         flex-wrap: wrap;
     }
@@ -872,11 +872,6 @@ footer {
 
 }
 
-/* GRADIENTES */
-
-.gradLineal {
-    background-image: linear-gradient(blue lightblue);
-}
 
 /* TRANSICIONES */
 
@@ -890,12 +885,6 @@ footer {
     font-size: 25px;
     transition-duration: 2s;
 }
-
-.menuResto:hover {
-    background-image: linear-gradient(blue lightblue);
-
-}
-
 
 
 
@@ -911,23 +900,17 @@ footer {
     animation-duration: 2s;
 }
 
+  /* PSEUDO CLASES - PSEUDO ELEMENTOS */
 
-/* PSEUDO CLASES - PSEUDO ELEMENTOS */
-
-:link {
-    color: $colorTextoChico;
+  :link {
+    color: lightslategray;
     font-size: 23px;
     text-align: center;
-}
-
-:visited {
-    color: $colorTextoChico;
+  }
+  
+  :visited {
+    color: lightslategray;
     font-size: 23px;
     text-align: center;
-}
-
-:active {
-    color: $colorTextoChico;
-    font-size: 23px;
-    text-align: center; 
-}
+  }
+  

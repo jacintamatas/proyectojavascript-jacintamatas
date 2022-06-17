@@ -363,7 +363,7 @@ section #btnAgregar {
   color: lightslategray;
   font-size: 20px;
   padding: 10px;
-  align-items: center;
+  justify-content: center;
   align-content: center;
   flex-wrap: wrap;
 }
@@ -730,10 +730,6 @@ section #btnAgregar {
       width: 70%;
     }
   }
-  /* GRADIENTES */
-  .gradLineal {
-    background-image: linear-gradient(blue lightblue);
-  }
   
   /* TRANSICIONES */
   .logoAlisonHeader:hover {
@@ -747,9 +743,6 @@ section #btnAgregar {
     transition-duration: 2s;
   }
   
-  .menuResto:hover {
-    background-image: linear-gradient(blue lightblue);
-  }
   
   /* ANIMACIONES */
   .div1Animado {
@@ -762,20 +755,17 @@ section #btnAgregar {
     animation-duration: 2s;
   }
   
-  /* PSEUDO CLASES - PSEUDO ELEMENTOS */
-  :link {
+  /* PSEUDO CLASES - PSEUDO ELEMENTOS    */
+
+   :link {
     color: lightslategray;
     font-size: 23px;
     text-align: center;
   }
+
+
   
   :visited {
-    color: lightslategray;
-    font-size: 23px;
-    text-align: center;
-  }
-  
-  :active {
     color: lightslategray;
     font-size: 23px;
     text-align: center;
