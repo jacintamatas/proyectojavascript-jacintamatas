@@ -79,11 +79,13 @@ const crearProductos = () => {
 }
 }
 
-const guardarLocal = (productos, productos) => { 
-    localStorage.setItem("producto", productos) 
-};
+const aplicarStorage = (clave, valor) => { 
+    localStorage.setItem(clave, valor);
+}
 
-guardarLocal("listaProductos", JSON.stringify(productos));
+for (const producto of productos) {
+    guardarLocal(producto.descripcionesProducts, JSON.stringify(producto))
+}
 
 const traerProductosJson = (async) => {
     let response = await fetch ("./json/archivoProducts.json");
