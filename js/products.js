@@ -80,6 +80,7 @@ const crearContenedor = () => {
 } 
 }
 crearContenedor();
+console.log (crearContenedor);
 
 const productos = (producto, nodoDivMain) => {
     let acumulador = "";
@@ -88,11 +89,12 @@ const productos = (producto, nodoDivMain) => {
     });
     nodoDivMain.innerHTML = acumulador;
 };
+productos();
 
 function boton (descripcionesProducts) {
     const encontrar = productosAlison.find (item => item.descripcionesProducts === descripcionesProducts);
-    alert (`Agregaste 1 ${encontrar.descripcionesProducts}`);
-}
+    alert ("Agregaste 1" + encontrar.descripcionesProducts);
+};
 productos (productosAlison, divMain);
 
 // localStorage
@@ -104,6 +106,7 @@ for (const producto of productosAlison) {
     aplicarStorage(productosAlison.descripcionesProducts, JSON.stringify(producto))
 }
 localStorage.setItem ("productoAlison", JSON.stringify (productosAlison));
+aplicarStorage ();
 
 // carga de datos JSON local
 

@@ -1,3 +1,12 @@
+let miFormulario = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    e.preventDefault();
+    console.log("Formulario Enviado");    
+}
+
+/*
 let formularioContact = document.getElementById ("formulario");
 let nombreContact = document.getElementById ("nombre");
 let apellidoContact = document.getElementById ("apellido");
@@ -15,4 +24,4 @@ function validarFormulario (e) {
 enviar.addEventListener ("click", () => {
     console.log (enviar.value);
 })
-
+*/
