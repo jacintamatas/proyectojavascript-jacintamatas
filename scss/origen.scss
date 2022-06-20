@@ -311,14 +311,6 @@ section {
         @include espacios(10px, 10px);
     }
 
-    #logIn {
-        display: grid;
-        color: rgba(0, 139, 139, 0.808);
-        font-size: 20px;
-        justify-items: center;
-        align-content: center;
-    }
-
 }
 
 
@@ -885,7 +877,6 @@ footer {
     font-size: 25px;
     transition-duration: 2s;
 }
-
 
 
 /* ANIMACIONES */

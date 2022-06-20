@@ -1,5 +1,6 @@
 
-const productos = [
+
+const productosAlison = [
     // DESAYUNOS // 
     { imagenProducts: "https://modestogodoy.com.ar/wp-content/uploads/2020/05/modesto-godoy-gidtcard-desayuno-4.png", descripcionesProducts: "desayuno alison", especificacionesProducts: "yogurt con granola y frutas + medialuna jamón y queso + té o café + jugo de naranja" , preciosProducts: "$1500" },
     { imagenProducts: "https://i.pinimg.com/564x/a4/32/b7/a432b7291663f3aa87bbd3d953d99d00.jpg", descripcionesProducts: "desayuno premium", especificacionesProducts: "porción de budín a elección + té o café + jugo de naranja" , preciosProducts: "$1200"},
@@ -58,40 +59,82 @@ const productos = [
     { imagenProducts: "https://www.sanpellegrino.com/media//international/home/brand/pet/Sanpellegrino_HP_33_pet.jpg", descripcionesProducts: "soda o agua mineral", especificacionesProducts: "" , preciosProducts: "$150"},
     { imagenProducts: "https://preview.free3d.com/img/2018/07/2162675739588035929/0k9ff6rn-900.jpg", descripcionesProducts: "gaseosas", especificacionesProducts: "" , preciosProducts: "$250"}
 
-]
+];
 
-let contenedor = document.createElement ("div"); 
-contenedor.className = "card";
-contenedor.innerHTML = `<img src= "${producto.imagenProducts}" >`
-document.body.appendChild (contenedor);
 
-const crearProductos = () => {
-    
-    for (const producto of productos) {
-        
-        let contenedorProducts = document.createElement ("div"); 
-        contenedorProducts.className = "card-body";
-        contenedorProducts.innerHTML = `
-                            <p> Producto: ${producto.descripcionesProducts} </p>
-                            <p2> Especificacion: ${producto.especificacionesProducts} </p2>
-                            <b> Precio: ${preciosProducts} </b>`;
-    document.body.appendChild (contenedorProducts);
+// generar card de productos
+
+const crearContenedor = () => {
+    for (const producto of productosAlison) {
+    return`
+    <div class="card" style="width: 25rem;">
+        <img src= ${producto.imagenProducts} class="card-img-top">
+            <div class="card-body">
+                <p class="descripcionesProducts"> ${producto.descripcionesProducts} </p>
+                <p2 class="especificacionesProducts"> ${producto.especificacionesProducts} </p2>
+                <b class="preciosProducts"> ${producto.preciosProducts} </b>
+                <a href= "#" onclick = boton (${producto.descripcionesProducts}) id="btnAgregar">Agregar </a>
+            </div>
+    </div>
+    `
+} 
 }
+crearContenedor();
+
+const productos = (producto, nodoDivMain) => {
+    let acumulador = "";
+    producto.forEach ((productosAlison) => {
+        acumulador = acumulador + crearContenedor (productosAlison);
+    });
+    nodoDivMain.innerHTML = acumulador;
+};
+
+function boton (descripcionesProducts) {
+    const encontrar = productosAlison.find (item => item.descripcionesProducts === descripcionesProducts);
+    alert (`Agregaste 1 ${encontrar.descripcionesProducts}`);
 }
+productos (productosAlison, divMain);
+
+// localStorage
 
 const aplicarStorage = (clave, valor) => { 
     localStorage.setItem(clave, valor);
+} 
+for (const producto of productosAlison) {
+    aplicarStorage(productosAlison.descripcionesProducts, JSON.stringify(producto))
 }
+localStorage.setItem ("productoAlison", JSON.stringify (productosAlison));
 
-for (const producto of productos) {
-    guardarLocal(producto.descripcionesProducts, JSON.stringify(producto))
-}
+// carga de datos JSON local
 
-const traerProductosJson = (async) => {
-    let response = await fetch ("./json/archivoProducts.json");
+const traerProductosJson = async () => {
+    let response = await fetch ("../json/archivoProducts.json");
     let data = await response.json ();
-    console.log (response);
-    console.log(data);
 }
+traerProductosJson ();
 
+/*
+const crearContenedor = () => {
+    for (const producto of productosAlison) {
+        let contenedor = document.createElement ("div"); 
+        contenedor.className = "card";
+        contenedor.innerHTML = `<img> ${producto.imagenProducts} </img>`;
+        document.body.appendChild (contenedor);
+}
+}
+crearContenedor();
 
+const crearProductos = () => {
+    for (const producto of productosAlison) {
+        let contenedorProducts = document.createElement ("div"); 
+        contenedorProducts.className = "card-body";
+        contenedorProducts.innerHTML = `
+                            <p class="descripcionesProducts"> Producto: ${producto.descripcionesProducts} </p>
+                            <p2 class="especificacionesProducts> Especificacion: ${producto.especificacionesProducts} </p2>
+                            <b class="preciosProducts"> Precio: ${producto.preciosProducts} </b>`;
+    document.body.appendChild (contenedorProducts);
+}
+}
+crearProductos ();
+
+*/
