@@ -1,5 +1,3 @@
-
-
 const productosAlison = [
     // DESAYUNOS // 
     { imagenProducts: "https://modestogodoy.com.ar/wp-content/uploads/2020/05/modesto-godoy-gidtcard-desayuno-4.png", descripcionesProducts: "desayuno alison", especificacionesProducts: "yogurt con granola y frutas + medialuna jamón y queso + té o café + jugo de naranja" , preciosProducts: "$1500" },
@@ -64,8 +62,63 @@ const productosAlison = [
 
 // generar card de productos
 
-const crearContenedor = () => {
-    for (const producto of productosAlison) {
+var crearContenedor = () => {
+    var acumulador = "";
+    for (var producto of productosAlison) { 
+        acumulador = acumulador + `
+        <div class="card" style="width: 25rem;">
+        <img src= ${producto.imagenProducts} class="card-img-top">
+            <div class="card-body">
+                <p class="descripcionesProducts"> ${producto.descripcionesProducts} </p>
+                <p2 class="especificacionesProducts"> ${producto.especificacionesProducts} </p2>
+                <b class="preciosProducts"> ${producto.preciosProducts} </b>
+                <a href= "#" onclick = boton (${producto.descripcionesProducts}) id="btnAgregar">Agregar </a>
+            </div>
+    </div>
+    `
+}
+nodoDivMain.innerHTML = acumulador;
+}
+crearContenedor();
+
+// agregar productos
+
+function boton (descripcionesProducts) {
+    let encontrar = productosAlison.find (item => item.descripcionesProducts === descripcionesProducts);
+    alert ("Agregaste 1" + encontrar.descripcionesProducts);
+};
+
+// localStorage
+
+var aplicarStorage = (clave, valor) => { 
+    localStorage.setItem(clave, valor);
+} 
+for (var producto of productosAlison) {
+    aplicarStorage(productosAlison.descripcionesProducts, JSON.stringify(producto))
+}
+localStorage.setItem ("productoAlison", JSON.stringify (productosAlison));
+aplicarStorage ();
+
+// carga de datos JSON local
+
+var traerProductosJson = async () => {
+    var response = await fetch ("../json/archivoProducts.json");
+    var data = await response.json ();
+}
+traerProductosJson ();
+
+/*
+
+var productos = (producto, nodoDivMain) => {
+    var acumulador = "";
+    producto.forEach ((productosAlison) => {
+        acumulador = acumulador + crearContenedor (productosAlison);
+    });
+    nodoDivMain.innerHTML = acumulador;
+};
+
+var crearContenedor = () => {
+    for (var producto of productosAlison) { 
     return`
     <div class="card" style="width: 25rem;">
         <img src= ${producto.imagenProducts} class="card-img-top">
@@ -77,46 +130,8 @@ const crearContenedor = () => {
             </div>
     </div>
     `
-} 
 }
-crearContenedor();
-console.log (crearContenedor);
-
-const productos = (producto, nodoDivMain) => {
-    let acumulador = "";
-    producto.forEach ((productosAlison) => {
-        acumulador = acumulador + crearContenedor (productosAlison);
-    });
-    nodoDivMain.innerHTML = acumulador;
-};
-productos();
-
-function boton (descripcionesProducts) {
-    const encontrar = productosAlison.find (item => item.descripcionesProducts === descripcionesProducts);
-    alert ("Agregaste 1" + encontrar.descripcionesProducts);
-};
-productos (productosAlison, divMain);
-
-// localStorage
-
-const aplicarStorage = (clave, valor) => { 
-    localStorage.setItem(clave, valor);
-} 
-for (const producto of productosAlison) {
-    aplicarStorage(productosAlison.descripcionesProducts, JSON.stringify(producto))
 }
-localStorage.setItem ("productoAlison", JSON.stringify (productosAlison));
-aplicarStorage ();
-
-// carga de datos JSON local
-
-const traerProductosJson = async () => {
-    let response = await fetch ("../json/archivoProducts.json");
-    let data = await response.json ();
-}
-traerProductosJson ();
-
-/*
 const crearContenedor = () => {
     for (const producto of productosAlison) {
         let contenedor = document.createElement ("div"); 

@@ -1,4 +1,7 @@
-
+var botonholaaa = document.querySelector ('#holaaa');
+botonholaaa.addEventListener ("click", () => {
+    Swal.fire('Any fool can use a computer')
+})
 /*
 const leerDatos = (valorAPedir) => {
     return prompt (`Ingrese su ${valorAPedir}`);
