@@ -316,6 +316,18 @@
     padding: 10px;
     text-align: center;
   }
+
+  section .codigoProducts {
+    display: flex;
+    color: rgb(4, 78, 78);
+    font-size: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-variant: normal;
+    margin: 10px;
+    padding: 10px;
+}
+
   section .descripcionesProducts {
     display: flex;
     text-decoration: double;
@@ -349,14 +361,13 @@
 }
 
 section #btnAgregar {
-  display: flex;
   text-decoration: double;
   color: lightslategray;
+  border-color: lightslategray;
   font-size: 20px;
   padding: 10px;
-  justify-content: center;
   align-content: center;
-  flex-wrap: wrap;
+  justify-content: center;
 }
   
   /* Gallery */

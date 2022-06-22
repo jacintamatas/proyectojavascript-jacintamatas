@@ -396,6 +396,16 @@ section {
         text-align: center;
     }
 
+    .codigoProducts {
+        display: flex;
+        color: rgb(4, 78, 78);
+        font-size: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-variant: normal;
+        @include espacios(10px, 10px);
+    }
+
     .descripcionesProducts {
         display: flex;
         text-decoration: double;
@@ -428,14 +438,13 @@ section {
     }
 
     #btnAgregar {
-        display: flex;
         text-decoration: double;
         color: lightslategray;
+        border-color: lightslategray;
         font-size: 20px;
         padding: 10px;
-        justify-content: center;
         align-content: center;
-        flex-wrap: wrap;
+        justify-content: center;
     }
 
 }
