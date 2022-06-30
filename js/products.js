@@ -114,26 +114,6 @@ function setCarrito () {
     }
 }
 
-/*
-const anadirAlCarrito = (e) => {
-    e.preventDefault ();
-    if (e.target.classList.contains("btnAgregar")){
-        leerDatosProducto (e.target.parentElement.parentElement);
-        console.log (producto); 
-    }
-}
-    
-    leerDatosProducto = productosAlison => {
-        console.log (producto); 
-        const producto = {
-            producto: document.getElementsByClassName ("descripcionesProducts"),
-            precio: document.getElementsByClassName ("preciosProducts"),
-        }
-    } 
-
-console.log (leerDatosProducto);
-*/
-
 
 // localStorage
 
