@@ -59,6 +59,8 @@ const productosAlison = [
 
 ];
 
+let carrito = {}
+
 
 // generar card de productos
 
@@ -87,8 +89,51 @@ crearContenedor();
 function boton (codigo) {
     const encontrar = productosAlison.find (item => item.codigo == codigo);
     alert ("Agregaste el producto " + encontrar.codigo + ": " + encontrar.descripcionesProducts);
+
 };
 crearContenedor(productosAlison, nodoDivMain);
+
+
+function addCarrito (e) {
+    e.preventDefault ();
+    if (e.target.classList.contains("btnAgregar")){
+        setCarrito (e.target.parentElement)
+    }
+}
+
+function setCarrito () {
+    const producto = {
+        id: document.getElementsByClassName ("codigoProducts"),
+        producto: document.getElementsByClassName ("descripcionesProducts"),
+        precio: document.getElementsByClassName ("preciosProducts"),
+        cantidad: 1,
+    }
+
+    if (carrito.hasOwnproperty(producto.id)){
+        producto.cantidad = carrito [producto.id].cantidad + 1;
+    }
+}
+
+/*
+const anadirAlCarrito = (e) => {
+    e.preventDefault ();
+    if (e.target.classList.contains("btnAgregar")){
+        leerDatosProducto (e.target.parentElement.parentElement);
+        console.log (producto); 
+    }
+}
+    
+    leerDatosProducto = productosAlison => {
+        console.log (producto); 
+        const producto = {
+            producto: document.getElementsByClassName ("descripcionesProducts"),
+            precio: document.getElementsByClassName ("preciosProducts"),
+        }
+    } 
+
+console.log (leerDatosProducto);
+*/
+
 
 // localStorage
 
@@ -101,6 +146,7 @@ for (var producto of productosAlison) {
 localStorage.setItem ("productoAlison", JSON.stringify (productosAlison));
 aplicarStorage ();
 
+
 // carga de datos JSON local
 
 var traerProductosJson = async () => {
@@ -108,4 +154,3 @@ var traerProductosJson = async () => {
     var data = await response.json ();
 }
 traerProductosJson ();
-

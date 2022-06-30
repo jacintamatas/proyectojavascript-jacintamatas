@@ -9,9 +9,10 @@ function validarFormulario(e){
 
 var crearFormulario = () => { 
     var formularioContact = document.createElement ("div");
-    formularioContact.className = "fieldsetContact1";
+    formularioContact.className = "fieldsetContact2";
     formularioContact.innerHTML =
     `
+    <legend class="legendContact">Información extra</legend>
     <p class="pContact">¿Desea recibir información a su mail?</p> 
     <br>
     <span class="spanContact">SI</span> 
@@ -27,6 +28,7 @@ var crearFormulario = () => {
     <option value="Propietarios">Encargos</option>
     <option value="Locales">Sucursales</option>
     </select>     
+
 `;
 document.body.appendChild (formularioContact);
 }
