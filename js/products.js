@@ -89,7 +89,6 @@ crearContenedor();
 function boton (codigo) {
     const encontrar = productosAlison.find (item => item.codigo == codigo);
     alert ("Agregaste el producto " + encontrar.codigo + ": " + encontrar.descripcionesProducts);
-
 };
 crearContenedor(productosAlison, nodoDivMain);
 
