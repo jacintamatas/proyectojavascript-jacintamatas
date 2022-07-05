@@ -360,7 +360,7 @@
     padding: 10px;
 }
 
-section #btnAgregar {
+section .btnAgregar {
   text-decoration: double;
   color: lightslategray;
   border-color: lightslategray;

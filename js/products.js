@@ -59,7 +59,6 @@ const productosAlison = [
 
 ];
 
-let carrito = {}
 
 
 // generar card de productos
@@ -70,13 +69,14 @@ var crearContenedor = () => {
         acumulador = acumulador + `
         <div class="card" style="width: 25rem;">
         <img src= ${producto.imagenProducts} class="card-img-top">
-            <div class="card-body">
-                <p class="codigoProducts"> ${producto.codigo} </p>
-                <p2 class="descripcionesProducts"> ${producto.descripcionesProducts} </p2>
-                <p3 class="especificacionesProducts"> ${producto.especificacionesProducts} </p3>
-                <b class="preciosProducts"> ${producto.preciosProducts} </b>
-                <button onclick = "boton (${producto.codigo})" id="btnAgregar">Agregar</button>
-            </div>
+        <div class="card-body">
+        <p class="codigoProducts"> ${producto.codigo} </p>
+        <p2 class="descripcionesProducts"> ${producto.descripcionesProducts} </p2>
+        <p3 class="especificacionesProducts"> ${producto.especificacionesProducts} </p3>
+        <b class="preciosProducts"> ${producto.preciosProducts} </b>
+        <button onclick = "boton (${producto.codigo})" class="btnAgregar">Agregar</button>
+    </div>
+</div>
     </div>
     `
 }
@@ -92,38 +92,32 @@ function boton (codigo) {
 };
 crearContenedor(productosAlison, nodoDivMain);
 
+let carrito = []
+
+const buttons = document.getElementsByClassName ("btnAgregar");
+
+for (let button of buttons) {
+    button.addEventListener ("click", addCarrito)
+}
 
 function addCarrito (e) {
-    e.preventDefault ();
-    if (e.target.classList.contains("btnAgregar")){
-        setCarrito (e.target.parentElement)
-    }
+    setCarrito (e.target.parentElement)
 }
 
 function setCarrito () {
     const producto = {
-        id: document.getElementsByClassName ("codigoProducts"),
-        producto: document.getElementsByClassName ("descripcionesProducts"),
-        precio: document.getElementsByClassName ("preciosProducts"),
+        id: document.getElementById ("codigoProducts"),
+        producto: document.getElementById ("descripcionesProducts"),
+        precio: document.getElementById ("preciosProducts"),
         cantidad: 1,
     }
 
-    if (carrito.hasOwnproperty(producto.id)){
-        producto.cantidad = carrito [producto.id].cantidad + 1;
-    }
+    carrito.push(producto);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    const check = JSON.parse(localStorage.getItem ("carrito"));
+    console.log (check);
 }
-
-
-// localStorage
-
-var aplicarStorage = (clave, valor) => { 
-    localStorage.setItem(clave, valor);
-} 
-for (var producto of productosAlison) {
-    aplicarStorage(productosAlison.codigo, JSON.stringify(producto))
-}
-localStorage.setItem ("productoAlison", JSON.stringify (productosAlison));
-aplicarStorage ();
 
 
 // carga de datos JSON local
